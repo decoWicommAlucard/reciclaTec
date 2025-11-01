@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReciclaTech</title>
+
+    <!-- Google Fonts (Inter e Poppins) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS compilado do SCSS -->
+    <link rel="stylesheet" href="src/css/styles.css" />
+  </head>
+
+  <body>
+    <!-- ========== HEADER ========== -->
+    <header class="site-header" role="banner">
+      <div class="container site-header__wrap">
+        <a href="/" class="site-header__brand">
+          <img
+            src="src/img/logo.svg"
+            alt="ReciclaTech"
+            class="site-header__logo"
+          />
+          <!-- título visual, não estrutural -->
+          <span class="site-header__title" aria-hidden="true">ReciclaTech</span>
+        </a>
+
+        <nav class="site-header__nav" aria-label="Navegação principal">
+          <ul class="site-header__list" role="list">
+            <li>
+              <a
+                class="site-header__link"
+                href="#como-funciona"
+                aria-current="page"
+                >Como funciona</a
+              >
+            </li>
+            <li><a class="site-header__link" href="#doar">Doar</a></li>
+            <li><a class="site-header__link" href="#adquirir">Adquirir</a></li>
+            <li><a class="btn btn--primary" href="#entrar">Entrar</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>
