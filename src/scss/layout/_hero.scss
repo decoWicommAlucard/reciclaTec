@@ -34,6 +34,7 @@
 /* mobile: < 1024px */
 @include mixins.mobile {
   .hero {
+    @include mixins.container-max(375px);
     &__wrap {
       margin-top: 42px;
       @include utils.xflex($dir: column);
@@ -47,6 +48,16 @@
         $gap: 40px
       );
     }
+
+    &__title {
+      font-size: tokens.$font-size-title;
+    }
+  }
+}
+
+@include mixins.tablet {
+  .hero {
+    @include mixins.container-max(678px);
   }
 }
 

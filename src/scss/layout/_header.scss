@@ -6,10 +6,10 @@
   justify-content: space-between;
   width: 100%;
   padding: 0 16px;
-  @include mixins.container-max(1106px);
 
   &__wrap {
     width: 100%;
+    @include mixins.container-max(1106px);
 
     border-bottom: 1px solid #b4aeae;
     backdrop-filter: blur(2px);
@@ -61,7 +61,7 @@
 @include mixins.mobile {
   .site-header {
     min-height: 176px;
-    width: min(100%, 691px);
+
     margin: 34px 0 auto;
 
     &__wrap {
