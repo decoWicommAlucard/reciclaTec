@@ -14,8 +14,23 @@
 
 /* mobile: < 1024px */
 @include mixins.mobile {
+  .hero {
+    &__wrap {
+      margin-top: 42px;
+      @include utils.xflex($dir: column);
+    }
+
+    &__content {
+      
+    }
+  }
 }
 
 /* desktop: ≥ 1024px */
 @include mixins.desktop {
+  .hero {
+    &__wrap {
+      margin-top: 55px;
+    }
+  }
 }

@@ -68,7 +68,7 @@
     }
 
     &__list {
-      @include utils.xflex($align: center, $gap: 16px 33px);
+      @include utils.xflex($align: center, $gap: 16px 33px, $wrap: wrap);
     }
 
     &__nav {
@@ -76,9 +76,10 @@
       @include utils.xflex(
         $align: center,
         $justify: space-between,
-        $wrap: wrap
+        $wrap: wrap,
+        $gap: 16px
       );
-      row-gap: 16px;
+
       padding-bottom: 16px;
     }
   }
