@@ -6,7 +6,7 @@
   width: min(92vw, #{tokens.$container-max});
   margin-inline: auto;
 }
-@mixin container-max($max) {
+@mixin container-max($max) {  
   width: min(92vw, #{$max});
   margin-inline: auto;
 }

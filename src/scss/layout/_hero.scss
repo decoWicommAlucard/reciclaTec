@@ -6,6 +6,25 @@
   &__wrap {
     @include utils.xflex(between-center, $gap: 20px);
   }
+
+  &__actions {
+    width: 100%;
+    @include utils.xflex(
+      $dir: row,
+      $align: center,
+      $justify: center,
+      $gap: 16px
+    );
+  }
+
+  &__title {
+    font-weight: tokens.$font-bold;
+    font-size: 60px;
+    line-height: 130%;
+    font-family: tokens.$font-poppins;
+    @include utils.xflex($align: center, $justify: center);
+    text-align: left;
+  }
 }
 
 /* ===========================
@@ -21,7 +40,12 @@
     }
 
     &__content {
-      
+      @include utils.xflex(
+        $dir: column,
+        $align: center,
+        $justify: space-between,
+        $gap: 40px
+      );
     }
   }
 }
@@ -29,6 +53,7 @@
 /* desktop: ≥ 1024px */
 @include mixins.desktop {
   .hero {
+    @include mixins.container;
     &__wrap {
       margin-top: 55px;
     }

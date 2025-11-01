@@ -57,6 +57,20 @@
   );
 }
 
+.btn--transparent-green {
+  @include btn-solid(
+    189px,
+    #fff,
+    #16a34a,
+    tokens.$text-title-green,
+    60px,
+    0px,
+    30px,
+    10px,
+    6px
+  );
+}
+
 /* ===== Flex util genérico com presets ===== */
 /* Presets aceitos:
    - between-center, center, around-center, evenly-center,

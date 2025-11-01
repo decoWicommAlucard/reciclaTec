@@ -6,6 +6,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 0 16px;
+  @include mixins.container-max(1106px);
 
   &__wrap {
     width: 100%;
