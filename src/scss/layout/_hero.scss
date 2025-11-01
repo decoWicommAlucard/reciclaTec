@@ -1,0 +1,21 @@
+@use '../base/tokens';
+@use '../base/mixins';
+@use '../base/utils';
+
+.hero {
+  &__wrap {
+    @include utils.xflex(between-center, $gap: 20px);
+  }
+}
+
+/* ===========================
+   Responsividade (placeholders)
+   =========================== */
+
+/* mobile: < 1024px */
+@include mixins.mobile {
+}
+
+/* desktop: ≥ 1024px */
+@include mixins.desktop {
+}

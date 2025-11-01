@@ -186,32 +186,75 @@ button {
   outline-offset: 2px;
 }
 
+/* ===== Flex util genérico com presets ===== */
+/* Presets aceitos:
+   - between-center, center, around-center, evenly-center,
+   - start-center, end-center, between-start, column-center
+   Ex.: @include xflex(between-center, $gap: 16px);
+*/
+/* Item util: controla o item dentro do container flex */
 .site-header {
-  display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 0 16px;
 }
 .site-header__wrap {
-  display: flex;
   width: 100%;
-  justify-content: space-between;
   border-bottom: 1px solid #b4aeae;
   backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+.site-header__wrap > * {
+  min-width: 0;
 }
 .site-header__brand {
   display: flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+.site-header__brand > * {
+  min-width: 0;
+}
+.site-header__brand {
   text-decoration: none;
   gap: 10px;
 }
 .site-header__nav {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+.site-header__nav > * {
+  min-width: 0;
 }
 .site-header__list {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+.site-header__list > * {
+  min-width: 0;
+}
+.site-header__list {
   gap: 16px 33px;
 }
 .site-header__link {
@@ -243,15 +286,43 @@ button {
     margin-top: 34px;
   }
   .site-header__wrap {
+    display: flex;
     flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-start;
     gap: 38px;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+  .site-header__wrap > * {
+    min-width: 0;
   }
   .site-header__list {
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px 33px;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+  .site-header__list > * {
+    min-width: 0;
   }
   .site-header__nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    gap: 0;
     flex-wrap: wrap;
+    min-width: 0;
+  }
+  .site-header__nav > * {
+    min-width: 0;
+  }
+  .site-header__nav {
     row-gap: 16px;
     padding-bottom: 16px;
   }
@@ -264,9 +335,35 @@ button {
     padding: 0 37px;
   }
   .site-header__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     gap: 33px;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+  .site-header__nav > * {
+    min-width: 0;
   }
 }
+.hero__wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+.hero__wrap > * {
+  min-width: 0;
+}
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../scss/base/_reset.scss%22,%22../scss/base/_base.scss%22,%22../scss/base/_tokens.scss%22,%22../scss/base/_utils.scss%22,%22../scss/layout/_header.scss%22,%22../scss/base/_mixins.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22;AAAA;AAAA;AAAA;EAGE;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;;;AAEF;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;;;AAGF;EACE;EACA;;;AAGF;AAAA;AAAA;AAAA;EAIE;;;AAEF;EACE;EACA;;;AAEF;AAAA;EAEE;EACA;EACA;;;AAEF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;EAOE;;;AChDF;EACE;;;AAGF;AACA;EACE;EACA;AAEF;EACE,YCJQ,MDI0B;EAClC,OCFW,SDEuB;EAClC;EACA,aC0Ba,KD1BsB;EACnC,aCgCU,KDhCsB;EAChC;EACA;;;AAGF;AACA;EACE,WCUY,MDVoB;EAChC,aCyBW,KDzBsB;EACjC,OCbc,SDamB;;;AAGnC;AACA;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;EACA,OCzBW;;;AD4Bb;EACE,WCNa;EDOb,aCMS;EDLT,aCEU;;;ADAZ;EACE,WCVa;EDWb,aCCS;EDAT,aCHU;;;ADKZ;EACE,WCda;EDeb,aCJS;EDKT,aCTc;;;ADWhB;EACE,WClBa;EDmBb,aCRU;EDSV,aCdc;;;ADgBhB;EACE,WCtBa;EDuBb,aCbU;EDcV,aCpBY;;;ADuBd;AACA;EACE;EACA;;;AAEF;EACE;EACA;;;AAGF;EACE;;;AAGF;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;;;AAGF;AACA;AAAA;AAAA;AAAA;EAIE;EACA,OCnFW;;;ACTb;AA2CA;EA/BE;EACA;EACA;EACA,KAqCE;EAnCF,QAgCE;EA/BF;AAEA;EACA;EACA;EAEA,eA6BE;EA5BF;EACA,YAoBE;EAnBF,ODhBa;ECiBb;EACA,aDYc;ECXd;EACA;;AAEA;EACE;EACA;;AAEF;EACE;EACA;;;ACtCJ;EACE;EACA;EACA;EACA;;AACA;EACE;EACA;EACA;EACA;EACA;;AAEF;EACE;EACA;EACA;EACA;;AAGF;EACE;EACA;;AAEF;EACE;EACA;EACA;;AAEF;EACE,aFHW;EEIX;;AAGF;EACE,OF1BS;EE2BT,aFTW;EEUX;EACA;EACA,aFGQ;EEFR;;AAGF;EACE;EACA;;;AAIJ;AAAA;AAAA;AAIA;ACvCE;EDyCA;IACE;IACA;IACA;IACA;;EAEA;IACE;IACA;;EAEF;IACE;;EAEF;IACE;IACA;IACA;IACA;;;AAKN;ACrDE;EDuDA;IACE;IACA;IACA;;EAEA;IACE;IACA%22,%22file%22:%22styles.css%22%7D */
+/* ===========================
+   Responsividade (placeholders)
+   =========================== */
+/* mobile: < 1024px */
+/* desktop: ≥ 1024px */
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../scss/base/_reset.scss%22,%22../scss/base/_base.scss%22,%22../scss/base/_tokens.scss%22,%22../scss/base/_utils.scss%22,%22../scss/layout/_header.scss%22,%22../scss/base/_mixins.scss%22,%22../scss/layout/_hero.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%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%22,%22file%22:%22styles.css%22%7D */
