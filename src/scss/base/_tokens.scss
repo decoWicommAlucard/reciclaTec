@@ -2,6 +2,7 @@
 
 // -------------------- CORES PRIMÁRIAS --------------------
 $brand-green-600: #16a34a; 
+$brand-green-btn-hover: #21C05C;
 $brand-blue-600: #2563eb; 
 
 // -------------------- NEUTROS & SUPERFÍCIES --------------------
@@ -14,10 +15,8 @@ $text-on-dark: #ffffff; // texto sobre fundos fortes
 
 // Aliases semânticos
 $color-primary: $brand-green-600; // cor primária
-$color-primary-hover: color.scale(
-  $brand-green-600,
-  $lightness: -8%
-); // primária hover
+$color-primary-hover: $brand-green-btn-hover;
+
 $color-accent: $brand-blue-600; // cor de destaque
 
 $color-bg-app: $bg-page; // fundo da página

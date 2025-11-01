@@ -157,4 +157,116 @@ button {
   color: #1f2937;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../scss/base/_reset.scss%22,%22../scss/base/_base.scss%22,%22../scss/base/_tokens.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22;AAAA;AAAA;AAAA;EAGE;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;;;AAEF;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;;;AAGF;EACE;EACA;;;AAGF;AAAA;AAAA;AAAA;EAIE;;;AAEF;EACE;EACA;;;AAEF;AAAA;EAEE;EACA;EACA;;;AAEF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;EAOE;;;AChDF;EACE;;;AAGF;AACA;EACE;EACA;AAEF;EACE,YCLQ,MDK0B;EAClC,OCHW,SDGuB;EAClC;EACA,aC2Ba,KD3BsB;EACnC,aCiCU,KDjCsB;EAChC;EACA;;;AAGF;AACA;EACE,WCWY,MDXoB;EAChC,aC0BW,KD1BsB;EACjC,OCdc,SDcmB;;;AAGnC;AACA;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;EACA,OC1BW;;;AD6Bb;EACE,WCLa;EDMb,aCOS;EDNT,aCGU;;;ADDZ;EACE,WCTa;EDUb,aCES;EDDT,aCFU;;;ADIZ;EACE,WCba;EDcb,aCHS;EDIT,aCRc;;;ADUhB;EACE,WCjBa;EDkBb,aCPU;EDQV,aCbc;;;ADehB;EACE,WCrBa;EDsBb,aCZU;EDaV,aCnBY;;;ADsBd;AACA;EACE;EACA;;;AAEF;EACE;EACA;;;AAGF;EACE;;;AAGF;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;;;AAGF;AACA;AAAA;AAAA;AAAA;EAIE;EACA,OCpFW%22,%22file%22:%22styles.css%22%7D */
+/* Use: @include btn-solid($max, $bg, $border, $color, $h, $py, $px, $gap, $radius); */
+.btn--solid-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 60px;
+  padding: 0px 30px;
+  /* largura “100% até o limite X” */
+  width: min(100%, 189px); /* controle por SCSS */
+  width: min(100%, var(--btn-max, 189px)); /* OU por CSS var */
+  border-radius: 6px;
+  border: 1px solid #21c05c;
+  background: #16a34a;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+.btn--solid-green:hover {
+  background: #21c05c;
+  transition: background 0.3s ease;
+}
+.btn--solid-green:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 16px;
+}
+.site-header__wrap {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid #b4aeae;
+  backdrop-filter: blur(2px);
+}
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+}
+.site-header__nav {
+  display: flex;
+  align-items: center;
+}
+.site-header__list {
+  display: flex;
+  align-items: center;
+  gap: 16px 33px;
+}
+.site-header__link {
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+}
+.site-header__title {
+  color: #1f2937;
+  font-family: "Poppins", sans-serif;
+  font-size: 31.76px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42.347px; /* 133.333% */
+}
+.site-header__brand img {
+  width: 36px;
+  height: 36px;
+}
+
+/* ===========================
+   Responsividade (placeholders)
+   =========================== */
+/* mobile: < 1024px */
+@media (max-width: 1023.98px) {
+  .site-header {
+    min-height: 176px;
+    width: min(100%, 691px);
+    margin: 0 auto;
+    margin-top: 34px;
+  }
+  .site-header__wrap {
+    flex-direction: column;
+    gap: 38px;
+  }
+  .site-header__list {
+    flex-wrap: wrap;
+  }
+  .site-header__nav {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 16px;
+    padding-bottom: 16px;
+  }
+}
+/* desktop: ≥ 1024px */
+@media (min-width: 1024px) {
+  .site-header {
+    min-height: 90px;
+    margin-top: 16px;
+    padding: 0 37px;
+  }
+  .site-header__nav {
+    justify-content: space-between;
+    gap: 33px;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../scss/base/_reset.scss%22,%22../scss/base/_base.scss%22,%22../scss/base/_tokens.scss%22,%22../scss/base/_utils.scss%22,%22../scss/layout/_header.scss%22,%22../scss/base/_mixins.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22;AAAA;AAAA;AAAA;EAGE;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;;;AAEF;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;;;AAGF;EACE;EACA;;;AAGF;AAAA;AAAA;AAAA;EAIE;;;AAEF;EACE;EACA;;;AAEF;AAAA;EAEE;EACA;EACA;;;AAEF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;EAOE;;;AChDF;EACE;;;AAGF;AACA;EACE;EACA;AAEF;EACE,YCJQ,MDI0B;EAClC,OCFW,SDEuB;EAClC;EACA,aC0Ba,KD1BsB;EACnC,aCgCU,KDhCsB;EAChC;EACA;;;AAGF;AACA;EACE,WCUY,MDVoB;EAChC,aCyBW,KDzBsB;EACjC,OCbc,SDamB;;;AAGnC;AACA;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;EACA,OCzBW;;;AD4Bb;EACE,WCNa;EDOb,aCMS;EDLT,aCEU;;;ADAZ;EACE,WCVa;EDWb,aCCS;EDAT,aCHU;;;ADKZ;EACE,WCda;EDeb,aCJS;EDKT,aCTc;;;ADWhB;EACE,WClBa;EDmBb,aCRU;EDSV,aCdc;;;ADgBhB;EACE,WCtBa;EDuBb,aCbU;EDcV,aCpBY;;;ADuBd;AACA;EACE;EACA;;;AAEF;EACE;EACA;;;AAGF;EACE;;;AAGF;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;;;AAGF;AACA;AAAA;AAAA;AAAA;EAIE;EACA,OCnFW;;;ACTb;AA2CA;EA/BE;EACA;EACA;EACA,KAqCE;EAnCF,QAgCE;EA/BF;AAEA;EACA;EACA;EAEA,eA6BE;EA5BF;EACA,YAoBE;EAnBF,ODhBa;ECiBb;EACA,aDYc;ECXd;EACA;;AAEA;EACE;EACA;;AAEF;EACE;EACA;;;ACtCJ;EACE;EACA;EACA;EACA;;AACA;EACE;EACA;EACA;EACA;EACA;;AAEF;EACE;EACA;EACA;EACA;;AAGF;EACE;EACA;;AAEF;EACE;EACA;EACA;;AAEF;EACE,aFHW;EEIX;;AAGF;EACE,OF1BS;EE2BT,aFTW;EEUX;EACA;EACA,aFGQ;EEFR;;AAGF;EACE;EACA;;;AAIJ;AAAA;AAAA;AAIA;ACvCE;EDyCA;IACE;IACA;IACA;IACA;;EAEA;IACE;IACA;;EAEF;IACE;;EAEF;IACE;IACA;IACA;IACA;;;AAKN;ACrDE;EDuDA;IACE;IACA;IACA;;EAEA;IACE;IACA%22,%22file%22:%22styles.css%22%7D */
