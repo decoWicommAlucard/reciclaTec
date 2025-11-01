@@ -1,0 +1,58 @@
+@use 'tokens';
+
+/* Use: @include btn-solid($max, $bg, $border, $color, $h, $py, $px, $gap, $radius); */
+@mixin btn-solid(
+  $max: 360px,
+  $bg: #21c05c,
+  $border: #21c05c,
+  $color: tokens.$text-on-dark,
+  $h: 60px,
+  $py: 0px,
+  $px: 30px,
+  $gap: 10px,
+  $radius: 6px
+) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+
+  height: $h;
+  padding: $py $px;
+
+  /* largura “100% até o limite X” */
+  width: min(100%, #{$max}); /* controle por SCSS */
+  width: min(100%, var(--btn-max, #{$max})); /* OU por CSS var */
+
+  border-radius: $radius;
+  border: 1px solid $border;
+  background: $bg;
+  color: $color;
+  text-decoration: none;
+  font-weight: tokens.$font-semibold;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+
+  &:hover {
+    background: #21c05c;
+    transition: background 0.3s ease;
+  }
+  &:focus-visible {
+    outline: 2px solid tokens.$color-accent;
+    outline-offset: 2px;
+  }
+}
+
+.btn--solid-green {
+  @include btn-solid(
+    189px,
+    #16a34a,
+    #21c05c,
+    tokens.$text-on-dark,
+    60px,
+    0px,
+    30px,
+    10px,
+    6px
+  );
+}
