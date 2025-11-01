@@ -61,13 +61,12 @@
   .site-header {
     min-height: 176px;
     width: min(100%, 691px);
-    margin: 0 auto;
-    margin-top: 34px;
+    margin: 34px 0 auto;
 
     &__wrap {
       @include utils.xflex($dir: column, $align: baseline, $gap: 38px);
     }
-    
+
     &__list {
       @include utils.xflex($align: center, $gap: 16px 33px);
     }
