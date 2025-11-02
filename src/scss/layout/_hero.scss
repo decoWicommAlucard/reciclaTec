@@ -24,22 +24,75 @@
     font-family: tokens.$font-poppins;
     @include utils.xflex($align: center, $justify: center);
     text-align: left;
+
+    /* estrutura do typewriter */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  &__media {
-    width: 100%;
-    max-width: 410px;
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .line1 {
+    border-right: none;
+    animation: typing1 3s steps(20, end) forwards;
+  }
+
+  .line2 {
+    opacity: 0;
+    border-right: 3px solid #333;
+    animation: reveal 0s 3s forwards, typing2 3s steps(25, end) 3s forwards,
+      blink 0.7s step-end 6s 3 both;
+  }
+
+  /* === Animações === */
+  @keyframes typing1 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes typing2 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: transparent;
+    }
+  }
+
+  @keyframes reveal {
+    to {
+      opacity: 1;
+    }
   }
 }
 
 /* ===========================
-   Responsividade (placeholders)
+   Responsividade
    =========================== */
 
 /* mobile: < 1024px */
 @include mixins.mobile {
   .hero {
     @include mixins.container-max(375px);
+
     &__wrap {
       margin-top: 42px;
       @include utils.xflex($dir: column);
@@ -55,11 +108,28 @@
     }
 
     &__title {
-      font-size: tokens.$font-size-title;
+      /* mantém mesma dimensão visual do layout original */
+      font-size: tokens.$font-size-title; /* o mesmo token que você já usava */
+      line-height: 130%;
+      text-align: center;
+      align-items: center;
+
+      /* ajustes de responsividade do typewriter */
+      .typewriter {
+        text-align: center;
+      }
+
+      /* faz o texto caber bem em telas menores */
+      .line1,
+      .line2 {
+        font-size: inherit;
+        max-width: 100%;
+      }
     }
   }
 }
 
+/* tablet */
 @include mixins.tablet {
   .hero {
     @include mixins.container-max(678px);
@@ -70,7 +140,7 @@
   }
 }
 
-/* desktop: ≥ 1024px */
+/* desktop */
 @include mixins.desktop {
   .hero {
     @include mixins.container;
@@ -78,6 +148,7 @@
     &__wrap {
       margin-top: 55px;
     }
+
     &__content {
       @include utils.xflex($dir: column, $gap: 40px);
     }

@@ -34,10 +34,6 @@
   cursor: pointer;
   transition: transform 0.12s ease, opacity 0.12s ease;
 
-  &:hover {
-    background: #21c05c;
-    transition: background 0.3s ease;
-  }
   &:focus-visible {
     outline: 2px solid tokens.$color-accent;
     outline-offset: 2px;
@@ -56,6 +52,11 @@
     10px,
     6px
   );
+
+  &:hover {
+    background: #21c05c;
+    transition: background 0.3s ease;
+  }
 }
 
 .btn--transparent-green {

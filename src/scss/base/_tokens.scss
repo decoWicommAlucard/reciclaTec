@@ -1,19 +1,21 @@
 @use 'sass:color';
 
 // -------------------- CORES PRIMÁRIAS --------------------
-$brand-green-600: #16a34a; 
-$brand-green-btn-hover: #21C05C;
-$brand-blue-600: #2563eb; 
+$brand-green-600: #16a34a;
+$brand-green-btn-hover: #21c05c;
+$brand-blue-600: #2563eb;
 
 // -------------------- NEUTROS & SUPERFÍCIES --------------------
 $bg-page: #fff; // fundo geral
-$bg-border-card: #E4E4E7;; // borda do cards
-$bg-metrics: #F3F5F8; // fundo dos metrics
+$bg-border-card: #e4e4e7; // borda do cards
+$bg-metrics: #f3f5f8; // fundo dos metrics
+$bg-steps: #f3f5f8; // fundo da seção de steps
 
-$text-title-green: #15803D;
+$text-title-green: #15803d;
 $text-title: #1f2937; // título
 $text-subtitle: #4b5563; // subtítulo
 $text-on-dark: #ffffff; // texto sobre fundos fortes
+$text-darker: #09090b;
 
 // Aliases semânticos
 $color-primary: $brand-green-600; // cor primária
@@ -22,7 +24,6 @@ $color-primary-hover: $brand-green-btn-hover;
 $color-accent: $brand-blue-600; // cor de destaque
 
 $color-bg-app: $bg-page; // fundo da página
-
 
 $color-text-strong: $text-title; // texto forte
 $color-text-muted: $text-subtitle; // texto secundário
@@ -39,7 +40,7 @@ $font-size-h2: 1.5625rem; // 25px
 $font-size-h3: 1.5625rem; // 25px
 $font-size-h4: 1.25rem; // 20px
 $font-size-h5: 0.875rem; // 14px
-$font-size-title: 2rem; // 32px 
+$font-size-title: 2rem; // 32px
 
 // Pesos
 $font-regular: 400; // Regular
@@ -68,4 +69,3 @@ $btn-primary-bg: $color-primary; // fundo padrão
 $btn-primary-bg-hover: $color-primary-hover; // fundo hover
 $btn-primary-text: $text-on-dark; // texto do botão
 $btn-primary-radius: $radius-md; // 8px
-
