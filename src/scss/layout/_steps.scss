@@ -1,0 +1,8 @@
+@use '../base/tokens';
+@use '../base/mixins';
+@use '../base/utils';
+
+.steps {
+  @include mixins.container-max(968px);
+  margin-top: 110px;
+}

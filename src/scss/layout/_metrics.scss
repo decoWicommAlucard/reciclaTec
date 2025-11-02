@@ -1,37 +1,63 @@
-@use '../base/tokens';
-@use '../base/mixins';
-@use '../base/utils';
+  @use '../base/tokens';
+  @use '../base/mixins';
+  @use '../base/utils';
 
-.metrics {
-  background-color: tokens.$bg-metrics;
-  margin-top: 137px;
+  .metrics {
+    background-color: tokens.$bg-metrics;
+    margin-top: 137px;
 
-  &__wrap {
-    @include mixins.container-max(968px);
-    @include utils.xflex(
-      $align: center,
-      $justify: space-between,
-      $wrap: wrap,
-      $gap: 16px
-    );
-    min-height: 168px;
+    &__wrap {
+      @include mixins.container-max(968px);
+      @include utils.xflex(
+        $align: center,
+        $justify: space-between,
+        $wrap: wrap,
+        $gap: 16px
+      );
+      min-height: 168px;
+    }
+
+    &__item {
+      @include utils.xflex($dir: column, $align: center, $gap: 24px);
+    }
+
+    &__title {
+      font-weight: tokens.$font-bold;
+      font-size: 2.5rem;
+      color: tokens.$brand-green-600;
+      font-family: tokens.$font-poppins;
+    }
+
+    &__subtitle {
+      font-weight: tokens.$font-regular;
+      font-size: 1rem;
+      color: tokens.$text-subtitle;
+      font-family: tokens.$font-poppins;
+    }
   }
 
-  &__item {
-    @include utils.xflex($dir: column, $align: center, $gap: 24px);
-  }
+  /* ===========================
+    Responsividade (placeholders)
+    =========================== */
 
-  &__title {
-    font-weight: tokens.$font-bold;
-    font-size: 2.5rem;
-    color: tokens.$brand-green-600;
-    font-family: tokens.$font-poppins;
-  }
+  /* mobile: < 1024px */
+  @include mixins.mobile {
+    .metrics {
+      margin-top: 32px;
+      &__wrap {
+        @include utils.xflex(
+          $dir: column,
+          $align: center,
+          $justify: space-between,
+          $wrap: wrap,
+          $gap: 16px
+        );
 
-  &__subtitle {
-    font-weight: tokens.$font-regular;
-    font-size: 1rem;
-    color: tokens.$text-subtitle;
-    font-family: tokens.$font-poppins;
+        padding: 16px;
+      }
+
+      &__title {
+        font-size: 1.5rem;
+      }
+    }
   }
-}

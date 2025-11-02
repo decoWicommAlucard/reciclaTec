@@ -25,6 +25,11 @@
     @include utils.xflex($align: center, $justify: center);
     text-align: left;
   }
+
+  &__media {
+    width: 100%;
+    max-width: 410px;
+  }
 }
 
 /* ===========================
