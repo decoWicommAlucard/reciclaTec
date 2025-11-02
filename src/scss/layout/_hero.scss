@@ -69,8 +69,16 @@
 @include mixins.desktop {
   .hero {
     @include mixins.container;
+
     &__wrap {
       margin-top: 55px;
+    }
+    &__content {
+      @include utils.xflex($dir: column, $gap: 40px);
+    }
+
+    &__actions {
+      @include utils.xflex($justify: flex-start, $gap: 43px);
     }
   }
 }
