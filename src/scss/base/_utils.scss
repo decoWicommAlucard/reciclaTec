@@ -29,7 +29,8 @@
   background: $bg;
   color: $color;
   text-decoration: none;
-  font-weight: tokens.$font-semibold;
+  white-space: nowrap;
+  font-weight: tokens.$font-regular;
   cursor: pointer;
   transition: transform 0.12s ease, opacity 0.12s ease;
 
@@ -61,8 +62,8 @@
   @include btn-solid(
     189px,
     #fff,
-    #16a34a,
-    tokens.$text-title-green,
+    tokens.$brand-blue-600,
+    tokens.$brand-blue-600,
     60px,
     0px,
     30px,
