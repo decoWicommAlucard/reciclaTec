@@ -1,63 +1,80 @@
-  @use '../base/tokens';
-  @use '../base/mixins';
-  @use '../base/utils';
+@use '../base/tokens';
+@use '../base/mixins';
+@use '../base/utils';
 
-  .metrics {
-    background-color: tokens.$bg-metrics;
-    margin-top: 137px;
+.metrics {
+  background-color: tokens.$bg-metrics;
+  margin-top: 8.5625rem;
 
-    &__wrap {
-      @include mixins.container-max(968px);
-      @include utils.xflex(
-        $align: center,
-        $justify: space-between,
-        $wrap: wrap,
-        $gap: 16px
-      );
-      min-height: 168px;
-    }
-
-    &__item {
-      @include utils.xflex($dir: column, $align: center, $gap: 24px);
-    }
-
-    &__title {
-      font-weight: tokens.$font-bold;
-      font-size: 2.5rem;
-      color: tokens.$brand-green-600;
-      font-family: tokens.$font-poppins;
-    }
-
-    &__subtitle {
-      font-weight: tokens.$font-regular;
-      font-size: 1rem;
-      color: tokens.$text-subtitle;
-      font-family: tokens.$font-poppins;
-    }
+  &__wrap {
+    @include mixins.container-max(60.5rem);
+    @include utils.xflex(
+      $align: center,
+      $justify: space-between,
+      $wrap: wrap,
+      $gap: 1rem
+    );
+    min-height: 10.5rem;
   }
 
-  /* ===========================
+  &__item {
+    @include utils.xflex($dir: column, $align: center, $gap: 1.5rem);
+  }
+
+  &__title {
+    font-weight: tokens.$font-bold;
+    font-size: 40px;
+    color: tokens.$brand-green-600;
+    font-family: tokens.$font-poppins;
+  }
+
+  &__subtitle {
+    font-weight: tokens.$font-regular;
+    font-size: 16px;
+    color: tokens.$text-subtitle;
+    font-family: tokens.$font-poppins;
+  }
+}
+
+/* ===========================
     Responsividade (placeholders)
     =========================== */
 
-  /* mobile: < 1024px */
-  @include mixins.mobile {
-    .metrics {
-      margin-top: 32px;
-      &__wrap {
-        @include utils.xflex(
-          $dir: column,
-          $align: center,
-          $justify: space-between,
-          $wrap: wrap,
-          $gap: 16px
-        );
+/* mobile: < 64rem */
+@include mixins.mobile {
+  .metrics {
+    margin-top: 2rem;
+    &__wrap {
+      @include utils.xflex(
+        $dir: column,
+        $align: center,
+        $justify: space-between,
+        $wrap: wrap,
+        $gap: 1rem
+      );
 
-        padding: 16px;
-      }
+      padding: 3rem;
+    }
 
-      &__title {
-        font-size: 1.5rem;
-      }
+    &__title {
+      font-size: 24px;
     }
   }
+}
+
+@include mixins.tablet {
+  .metrics {
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__wrap {
+      @include utils.xflex(
+        $dir: row,
+        $align: center,
+        $justify: between,
+        $gap: 16px
+      );
+    }
+  }
+}
